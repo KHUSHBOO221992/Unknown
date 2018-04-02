@@ -1,12 +1,10 @@
 package khushfproject;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JDesktopPane;
+import java.awt.image.BufferedImage;
+import java.awt.*;
+import java.io.*;
 
 public class NavForm extends javax.swing.JFrame 
 {
@@ -20,7 +18,7 @@ public class NavForm extends javax.swing.JFrame
         this.setLocationRelativeTo(null);
         try
         {
-            img = ImageIO.read(new File("C:\\Users\\Nikhil\\Desktop\\KhushFProject\\src\\cloud.jpg"));
+            img = ImageIO.read(new File("C:\\Users\\Nikhil\\Desktop\\KhushFProject\\src\\cloud.jpeg"));
         }
         catch (Exception ex)
         {
@@ -49,8 +47,10 @@ public class NavForm extends javax.swing.JFrame
     }
 
     private NavForm() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+//
+ 
     public double getScaleFactor(int iMasterSize, int iTargetSize)
     {
         double dScale = 1;
@@ -94,6 +94,17 @@ public class NavForm extends javax.swing.JFrame
         exitMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout desktopPaneLayout = new javax.swing.GroupLayout(desktopPane);
+        desktopPane.setLayout(desktopPaneLayout);
+        desktopPaneLayout.setHorizontalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 655, Short.MAX_VALUE)
+        );
+        desktopPaneLayout.setVerticalGroup(
+            desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 445, Short.MAX_VALUE)
+        );
 
         settingMenu.setMnemonic('s');
         settingMenu.setText("Setting");
@@ -162,11 +173,11 @@ public class NavForm extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 655, Short.MAX_VALUE)
+            .addComponent(desktopPane)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -220,10 +231,8 @@ public class NavForm extends javax.swing.JFrame
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new NavForm().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new NavForm().setVisible(true);
         });
     }
 
