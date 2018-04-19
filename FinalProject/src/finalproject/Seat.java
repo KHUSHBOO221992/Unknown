@@ -1,6 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package finalproject;
 
-public class Seat 
-{
+/**
+ *
+ * @author macstudent
+ */
+public class Seat {
    int Number;
 }
